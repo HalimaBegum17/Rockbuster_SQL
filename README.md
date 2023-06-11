@@ -1,8 +1,8 @@
 # Rockbuster_SQL
-**Using SQL queries to analyse data to help a fictitious movie rental company to segue into the online video rental service.**
+**Rockbuster Stealth LLC is a fictitious movie rental company that used to have stores worldwide. In order to stay competitive, they need help with their launch strategy and have a series of business questions from departments ranging from inventory to customer insights. My task is to analyse the data to answer these ad-hoc business questions.**
 
 # Objective
-**Rockbuster Stealth LLC is a fictitious movie rental company that used to have stores worldwide. In order to stay competitive, they need help with their launch strategy and have a series of business questions from departments ranging from inventory to customer insights. My task is to analyse the data to answer these ad-hoc business questions.**
+**Using SQL queries to analyse data to help a fictitious movie rental company to segue into the online video rental service.**
 
 # Data
 **You can view the raw dataset via the Rockbuster_Project_Brief. (approx 3MB)**
