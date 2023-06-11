@@ -1,0 +1,55 @@
+Finding the average amount paid by the top 5 customers: (using common table expressions (CTE) and join)
+
+WITH average_total_amount_paid_cte(customer_id, first_name, last_name, city, country) AS
+(SELECT B.customer_id, B.first_name, B.last_name, D.city, E.country,
+SUM(A.amount) AS total_amount_paid
+FROM payment A
+INNER JOIN customer B ON A.customer_id=B.customer_id
+INNER JOIN Address C on B.address_id=C.address_id
+INNER JOIN city D ON C.city_id=D.city_id
+INNER JOIN country E ON D.country_id=E.country_id
+WHERE city IN ('Aurora', 'Pinxiang', 'Sivas', 'Dhule (Dhulia)', 'Kurashiki', 'Xintai', 'Adoni', 'Celaya', 'Netzahuacyotl', 'Atlixco')
+GROUP BY B.customer_id, B.first_name, B.last_name, D.city, E.country
+ORDER BY total_amount_paid DESC
+LIMIT 5)
+SELECT AVG(total_amount_paid) AS average_amount_paid
+FROM average_total_amount_paid_cte
+
+I first defined the CTE using the WITH clause (average_total_amount_paid_cte). Next, I provided the AS keyword and parenthesized the subquery. 
+Finally, I wrote the main statement to find the average amount paid by the top 5 customers in the top 10 cities.
+
+
+Finding out how many of the top 5 customers are based within each country:
+
+WITH top_customer_count_cte(customer_id, first_name, last_name, city, country) AS
+(SELECT B.customer_id, B.first_name, B.last_name, D.city, E.country,
+SUM(A.amount) AS total_amount_paid
+FROM payment A
+INNER JOIN customer B ON A.customer_id=B.customer_id
+INNER JOIN Address C on B.address_id=C.address_id
+INNER JOIN city D ON C.city_id=D.city_id
+INNER JOIN country E ON D.country_id=E.country_id
+WHERE city IN ('Aurora', 'Pinxiang', 'Sivas', 'Dhule (Dhulia)', 'Kurashiki', 'Xintai', 'Adoni', 'Celaya', 'Netzahuacyotl', 'Atlixco')
+GROUP BY B.customer_id, B.first_name, B.last_name, D.city, E.country
+ORDER BY total_amount_paid DESC
+LIMIT 5),
+all_customer_count_cte AS
+(SELECT E.country, COUNT(DISTINCT B.customer_id) AS all_customer_count,
+COUNT(DISTINCT E.country) as top_customer_count
+FROM country E
+INNER JOIN city D ON E.country_id=D.country_id
+INNER JOIN address C ON D.city_id=C.city_id
+INNER JOIN customer B ON C.address_id=B.address_id
+GROUP BY E.country)
+SELECT E.country,
+COUNT(DISTINCT B.customer_id) AS all_customer_count,
+COUNT(DISTINCT top_customer_count_cte.customer_id)
+AS top_customer_count
+FROM country E
+INNER JOIN city D ON E.country_id=D.country_id
+INNER JOIN address C ON D.city_id=C.city_id
+INNER JOIN customer B ON C.address_id=B.address_id
+LEFT JOIN top_customer_count_cte ON E.country=top_customer_count_cte.country
+GROUP BY E.country
+ORDER BY top_customer_count DESC
+LIMIT 5;
