@@ -11,5 +11,6 @@
 
 **You can view the visualisation used in the Project here: [Tableau](https://public.tableau.com/app/profile/halima.begum)**
 
-*The Data_Dictionary defines the primary/foreign keys used and the relations between subsequent tables. The Entity_Relationship_Diagram is supplementary.*
+*The Data_Dictionary defines the primary/foreign keys used and the relations between subsequent tables.*
+*The Entity_Relationship_Diagram is supplementary.*
 *The Project_Brief outlines the key questions, context and objectives.*
