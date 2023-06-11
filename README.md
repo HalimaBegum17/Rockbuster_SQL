@@ -27,10 +27,4 @@
 
 **For more information on the tables used, please view the ERD above.**
 
-# Tools
-**For this project, the following python libraries were used:**
-
-**pandas - for data analysis**
-
-**seaborn - for visualisation**
-
+**You can view the Tableau Visualisations here: [Tableau](https://public.tableau.com/app/profile/halima.begum)**
