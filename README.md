@@ -9,16 +9,27 @@
 
 **The dataset comprises of a databse with the following tables:**
 
-+ payment                   + rental                            + store                     
-+ film_actor                + inventory                         + film_category
-+ customer                  + staff                             + actor
-+ film                      + category                          + language
-+ address                   + city                              + country
++ payment
++ rental
++ store                     
++ film_actor
++ inventory
++ film_category
++ customer
++ staff
++ actor
++ film
++ category
++ language
++ address
++ city
++ country
 
 **For more information on the tables used, please view the ERD above.**
 
 # Tools
 **For this project, the following python libraries were used:**
+
 **pandas - for data analysis**
 
 **seaborn - for visualisation**
