@@ -7,6 +7,19 @@
 # Data
 **You can view the raw dataset here via the Rockbuster_Project_Brief. (approx 3MB)**
 
-**You can view the Entity Relationship Diagram via the Rockbuster_ERD.**
+**The dataset comprises of a databse with the following tables:**
 
-**You can view the visualisation used in the Project here: [Tableau](https://public.tableau.com/app/profile/halima.begum)**
++ payment                   + rental                            + store                     
++ film_actor                + inventory                         + film_category
++ customer                  + staff                             + actor
++ film                      + category                          + language
++ address                   + city                              + country
+
+**For more information on the tables used, please view the ERD above.**
+
+# Tools
+**For this project, the following python libraries were used:**
+**pandas - for data analysis**
+
+**seaborn - for visualisation**
+
