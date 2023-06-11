@@ -5,7 +5,7 @@
 **Rockbuster Stealth LLC is a fictitious movie rental company that used to have stores worldwide. In order to stay competitive, they need help with their launch strategy and have a series of business questions from departments ranging from inventory to customer insights. My task is to analyse the data to answer these ad-hoc business questions.**
 
 # Data
-**You can view the raw dataset here via the Rockbuster_Project_Brief. (approx 3MB)**
+**You can view the raw dataset via the Rockbuster_Project_Brief. (approx 3MB)**
 
 **The dataset comprises of a databse with the following tables:**
 
